@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block content %}
+    <h2>Classic Book Details</h2>
+    {% if book_detail %}
+</head>
+<body>
+    <h3>Ranked #{{ book_detail.rank}}</h3>
+    <h4>Title: {{ book_detail.title}}</h4>
+    <h4>Written by: <em>{{ book_detail.author }}</em> in {{ book_detail.year}} </h4>
+    {% else %}
+        <p>Invalid Classic Book ID - ID Not found.</p>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

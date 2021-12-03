@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+{% block content %}
+    <meta charset="UTF-8">
+    <h2>Classic Books List</h2>
+</head>
+<body>
+       {% if book_list %}
+
+      <dl>
+          <table class="Classic Books List" border="2" cellpadding="8">
+            <caption><h3>Classic Books List</h3></caption>
+            <tr>
+                <td><h4>Rank</h4></td>
+                <td><h4>Title</h4></td>
+                <td><h4>Author</h4></td>
+                <td><h4>Year</h4></td>
+            </tr>
+             {% for book in book_list %}
+            <tr>
+                <td>
+                    <a href="/books/{{ book.id }}">
+                        {{ book.rank }}</a></td>
+                <td>{{ book.title}}</td>
+                <td>{{ book.author}}</td>
+                <td>{{ book.year}}</td>
+            </tr>
+             {% endfor %}
+          </table>
+      </dl>
+
+
+{% else % }
+     <p>No Classic Books found.</p>
+{% endif %}
+{% endblock %}
+
+</body>
+</html>
+
